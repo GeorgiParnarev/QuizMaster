@@ -1,0 +1,20 @@
+﻿  FileBaseProvider.cpp
+C:\Users\HP\source\repos\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'FileBaseProvider.cpp')
+      C:\Users\HP\source\repos\QuizMaster\QuizMaster\Vector.h(81,36):
+      the template instantiation context (the oldest one first) is
+          C:\Users\HP\source\repos\QuizMaster\QuizMaster\FileBaseProvider.cpp(6,20):
+          see reference to class template instantiation 'Vector<String>' being compiled
+          C:\Users\HP\source\repos\QuizMaster\QuizMaster\Vector.h(76,28):
+          while compiling class template member function 'Vector<String>::Vector(void)'
+              C:\Users\HP\source\repos\QuizMaster\QuizMaster\FileBaseProvider.cpp(6,20):
+              see the first reference to 'Vector<String>::Vector' in 'FileBaseProvider::FileSave'
+          C:\Users\HP\source\repos\QuizMaster\QuizMaster\Vector.h(79,42):
+          while compiling class template member function 'Vector<String>::Vector(size_t)'
+  
+  Player.cpp
+C:\Users\HP\source\repos\QuizMaster\QuizMaster\Player.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Player.cpp')
+  
+  Generating Code...
+  QuizMaster.vcxproj -> C:\Users\HP\source\repos\QuizMaster\x64\Debug\QuizMaster.exe
