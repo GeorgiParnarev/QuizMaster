@@ -1,16 +1,16 @@
 #include "User.h"
 
-//unsigned int User::Hash(const String& str)
-//{
-//	unsigned int hash = 1315423911;
-//
-//	for (std::size_t i = 0; i < str.getSize(); i++)
-//	{
-//		hash ^= ((hash << 5) + str[i] + (hash >> 2));
-//	}
-//
-//	return (hash & 0x7FFFFFFF);
-//}
+unsigned int User::Hash(const String& str)
+{
+	unsigned int hash = 1315423911;
+
+	for (std::size_t i = 0; i < str.getSize(); i++)
+	{
+		hash ^= ((hash << 5) + str[i] + (hash >> 2));
+	}
+
+	return (hash & 0x7FFFFFFF);
+}
 
 User::User(IWriter* writer, IReader* reader, IFileBaseProvider* provider)
 	: writer(writer)
@@ -66,6 +66,57 @@ bool User::getIsHasLogin() const
 void User::setIsHasLogin(const bool isHasLogin)
 {
 	this->isHasLogin = isHasLogin;
+}
+
+unsigned int User::GetPassword() const
+{
+	return this->password;
+}
+
+void User::SetPassword(unsigned int password)
+{
+	this->password = password;
+}
+
+void User::Login()
+{
+
+	if (!this->isHasLogin)
+	{
+
+	}
+
+	//TODO
+}
+
+void User::Logout()
+{
+	//TODO
+}
+
+void User::Action(const CommandStruct& cmdStr)
+{
+	if (cmdStr.command == HELP)
+	{
+		this->Help();
+	}
+
+	//TODO
+}
+
+IWriter& User::Writer()
+{
+	return *writer;
+}
+
+IReader& User::Reader()
+{
+	return *reader;
+}
+
+IFileBaseProvider& User::Provider()
+{
+	return *provider;
 }
 
 void User::Help()

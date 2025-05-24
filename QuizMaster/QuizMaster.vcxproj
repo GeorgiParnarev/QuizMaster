@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -131,6 +131,7 @@
     <ClCompile Include="ConsoleReader.cpp" />
     <ClCompile Include="ConsoleWriter.cpp" />
     <ClCompile Include="FileBaseProvider.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="IWriter.h" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="QuizMaster.cpp" />
@@ -139,9 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Administrator.h" />
+    <ClInclude Include="CommandStruct.h" />
     <ClInclude Include="ConsoleReader.h" />
     <ClInclude Include="ConsoleWriter.h" />
     <ClInclude Include="FileBaseProvider.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalConstants.h" />
     <ClInclude Include="IFileBaseProvider.h" />
     <ClInclude Include="IReader.h" />

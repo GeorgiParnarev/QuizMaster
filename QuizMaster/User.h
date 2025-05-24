@@ -21,9 +21,12 @@ private:
 	IFileBaseProvider* provider;
 
 protected:
-	/*virtual IWriter& Writer() override;
+	unsigned int GetPassword() const;
+	void SetPassword(unsigned int);
+
+	virtual IWriter& Writer() override;
 	virtual IReader& Reader() override;
-	virtual IFileBaseProvider& Provider() override;*/
+	virtual IFileBaseProvider& Provider() override;
 
 public:
 	User(IWriter*, IReader*, IFileBaseProvider*);
@@ -40,6 +43,10 @@ public:
 
 	virtual bool getIsHasLogin() const override;
 	virtual void setIsHasLogin(const bool) override;
+
+	virtual void Login() override;
+	virtual void Logout() override;
+	virtual void Action(const CommandStruct&) override;
 
 	virtual void Help() override;
 	virtual unsigned int Hash(const String& str) override;
