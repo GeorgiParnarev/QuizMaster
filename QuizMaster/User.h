@@ -50,6 +50,7 @@ public:
 
 	virtual void Help() override;
 	virtual unsigned int Hash(const String& str) override;
+	virtual void SaveData() override;
 
 	virtual ~User() {}
 };

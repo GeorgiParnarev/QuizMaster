@@ -1,15 +1,2 @@
-﻿  Game.cpp
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Game.cpp')
-  D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
-  the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Game.cpp(78,20):
-  	see reference to class template instantiation 'Vector<String>' being compiled
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
-  	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Game.cpp(78,20):
-  		see the first reference to 'Vector<String>::Vector' in 'Game::SetCommandStruct'
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
-  	while compiling class template member function 'Vector<String>::Vector(size_t)'
-  
+﻿  User.cpp
   QuizMaster.vcxproj -> D:\uni\projects uni\QuizMaster\QuizMaster\x64\Debug\QuizMaster.exe

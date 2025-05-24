@@ -31,6 +31,7 @@ public:
 	virtual IFileBaseProvider& Provider() = 0;
 
 	virtual void Help() = 0;
+	virtual void SaveData() = 0;
 
 	virtual unsigned int Hash(const String&) = 0;
 };

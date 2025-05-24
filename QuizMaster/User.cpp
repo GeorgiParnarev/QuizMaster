@@ -94,6 +94,11 @@ void User::Logout()
 	//TODO
 }
 
+void User::SaveData()
+{
+
+}
+
 void User::Action(const CommandStruct& cmdStr)
 {
 	if (cmdStr.command == HELP)

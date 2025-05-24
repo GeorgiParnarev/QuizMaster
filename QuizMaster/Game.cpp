@@ -107,12 +107,24 @@ void Game::Exit()
 {
     if (this->user->getIsHasLogin())
     {
-        //this->LogoutUser();
+        this->LogoutUser();
     }
 
     this->SaveConfig();
 
     this->Free();
+}
+
+void Game::LogoutUser()
+{
+    this->user->SaveData();
+    delete this->user;
+    this->user = nullptr;
+
+    if (this->command->command != EXIT)
+    {
+        this->user = new User(this->writer, this->reader, this->provider);
+    }
 }
 
 void Game::LoadConfig()

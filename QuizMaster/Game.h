@@ -30,7 +30,7 @@ public:
     void Run();
     void Exit();
 
-    /*void LoginUser();
+    void LoginUser();
     void LogoutUser();
-    void SignupUser();*/
+    void SignupUser();
 };
