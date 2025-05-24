@@ -32,6 +32,8 @@ void Game::Init()
 {
     this->command = new CommandStruct();
     this->user = new User(this->writer, this->reader, this->provider);
+
+    this->LoadConfig();
 }
 
 void Game::GameLoop()
@@ -45,7 +47,7 @@ void Game::GameLoop()
         if (this->command->command == EXIT)
         {
             isLoopExit = true;
-            //this->Exit();
+            this->Exit();
         }
         else if (this->command->command == LOGIN)
         {
@@ -99,4 +101,34 @@ void Game::SetCommandStruct()
         this->command->Param4 = commandLine[4];
         this->command->Param5 = commandLine[5];
     }
+}
+
+void Game::Exit()
+{
+    if (this->user->getIsHasLogin())
+    {
+        //this->LogoutUser();
+    }
+
+    this->SaveConfig();
+
+    this->Free();
+}
+
+void Game::LoadConfig()
+{
+    Vector<String> v;
+    String configString;
+    this->provider->Action(configString, ProviderOptions::ConfigLoad);
+    String::Split('\n', v, configString);
+
+    this->maxUserId = v[0].StringToInt();
+    this->maxQuizId = v[1].StringToInt();
+}
+
+void Game::SaveConfig()
+{
+    String configString = String::UIntToString(this->maxUserId) + "\n" + String::UIntToString(this->maxQuizId);
+
+    this->provider->Action(configString, ProviderOptions::ConfigSave);
 }

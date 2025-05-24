@@ -19,13 +19,16 @@ private:
     void GameLoop();
     void SetCommandStruct();
 
+    void LoadConfig();
+    void SaveConfig();
+
 public:
     Game(IWriter*, IReader*, IFileBaseProvider*);
     ~Game();
 
     void Init();
     void Run();
-    //void Exit();
+    void Exit();
 
     /*void LoginUser();
     void LogoutUser();
