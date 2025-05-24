@@ -23,4 +23,6 @@ private:
 
 public:
     virtual void Help() override;
+    virtual void SaveData() override;
+    virtual String BuildUserData() override;
 };

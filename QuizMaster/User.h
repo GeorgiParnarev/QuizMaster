@@ -11,6 +11,7 @@ private:
 	String firstName;
 	String lastName;
 	String username;
+	String fileName;
 
 	unsigned int password;
 
@@ -51,6 +52,7 @@ public:
 	virtual void Help() override;
 	virtual unsigned int Hash(const String& str) override;
 	virtual void SaveData() override;
+	virtual String BuildUserData() override;
 
 	virtual ~User() {}
 };

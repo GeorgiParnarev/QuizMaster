@@ -32,6 +32,7 @@ public:
 
 	virtual void Help() = 0;
 	virtual void SaveData() = 0;
+	virtual String BuildUserData() = 0;
 
 	virtual unsigned int Hash(const String&) = 0;
 };
