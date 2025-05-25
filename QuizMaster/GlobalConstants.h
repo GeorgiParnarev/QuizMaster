@@ -37,6 +37,9 @@ const String HELP = "help";
 const String EMPTY_STRING = "";
 const String PROMPT_STRING = "> ";
 
+const bool EXSIST = true;
+const bool NOT_EXSIST = false;
+
 const char FILENAME_TO_DATA_SEPARATOR_CHAR = '$';
 const String FILENAME_TO_DATA_SEPARATOR_STRING = "$";
 const char ROW_DATA_SEPARATOR = '\n';

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "User.h";
+#include "IGame.h"
 #include "Vector.h"
 
 class Player : public User
@@ -21,8 +22,16 @@ private:
     Vector<unsigned int> listFavoriteQuizzes;
     Vector<String> listFinishedChallenges;
 
+    IGame* game;
+
+    void Init();
+
 public:
+    Player(IWriter*, IReader*, IFileBaseProvider*, UserStruct*, UserOptions);
+    Player(IWriter*, IReader*, IFileBaseProvider*, IGame*);
+    virtual ~Player() {};
     virtual void Help() override;
     virtual void SaveData() override;
     virtual String BuildUserData() override;
+    virtual void SetUpUserData(UserStruct&, Vector<String>&, UserOptions) override;
 };

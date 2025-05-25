@@ -51,13 +51,13 @@ void Game::GameLoop()
         }
         else if (this->command->command == LOGIN)
         {
-            //this->LoginUser();
+            this->LoginUser();
         }
         else if (this->command->command == LOGOUT)
         {
             if (this->user->getIsHasLogin())
             {
-                //this->LogoutUser();
+                this->LogoutUser();
             }
         }
         else if (this->command->command == SIGNUP)
@@ -103,6 +103,21 @@ void Game::SetCommandStruct()
     }
 }
 
+void Game::LoginUser()
+{
+    if (this->user->getIsHasLogin())
+    {
+        this->writer->WriteLine("You cannot log in a new user before logging out!");
+
+        return;
+    }
+
+    UserStruct* us = new UserStruct();
+
+    us->username = this->command->Param1;
+    us->password = this->command->Param2;
+}
+
 void Game::Exit()
 {
     if (this->user->getIsHasLogin())
@@ -118,6 +133,7 @@ void Game::Exit()
 void Game::LogoutUser()
 {
     this->user->SaveData();
+
     delete this->user;
     this->user = nullptr;
 
@@ -125,6 +141,71 @@ void Game::LogoutUser()
     {
         this->user = new User(this->writer, this->reader, this->provider);
     }
+}
+
+void Game::SignupUser()
+{
+    if (this->user->getIsHasLogin())
+    {
+        this->writer->WriteLine("You cannot log in a new user before logging out!");
+
+        return;
+    }
+
+    UserStruct* us = new UserStruct();
+
+    us->firstName = this->command->Param1;
+    us->lastName = this->command->Param2;
+    us->username = this->command->Param3;
+    us->password = this->command->Param4;
+
+    int uo = this->user->FindUserData(*us, NOT_EXSIST);
+
+    if ((uo & UserOptions::AlreadyExisist) == UserOptions::AlreadyExisist)
+    {
+        this->writer->WriteLine("Such a user already exists!");
+        delete us;
+        us = nullptr;
+        return;
+    }
+    else if (us->password != this->command->Param5)
+    {
+        this->writer->WriteLine("Passwords do not match!");
+        delete us;
+        us = nullptr;
+        return;
+    }
+
+    Vector<String> usersVec;
+    String users;
+    this->user->AllUsers(users);
+    String::Split(ROW_DATA_SEPARATOR, usersVec, users);
+
+    String newUser = us->username + " " + String::UIntToString(this->user->Hash(us->password)) + " ";
+
+    String fileName = us->username + String::UIntToString(++this->maxUserId) + ".txt";
+
+    newUser += fileName + " " + String::UIntToString(this->maxUserId) + " " + String::UIntToString(UserOptions::OK);
+    us->fileName = fileName;
+    us->id = this->maxUserId;
+    us->password = EMPTY_STRING;
+    usersVec.push_back(newUser);
+
+    String usersString = EMPTY_STRING;
+
+    String::Join(ROW_DATA_SEPARATOR, usersVec, usersString);
+
+    this->provider->Action(usersString, ProviderOptions::NewUserSave);
+
+    Player* newPlayer = new Player(this->writer, this->reader, this->provider, us, UserOptions::NewUserCreated);
+
+    this->writer->WriteLine("Signup " + us->username + " successful!");
+
+    delete us;
+    us = nullptr;
+
+    delete newPlayer;
+    newPlayer = nullptr;
 }
 
 void Game::LoadConfig()

@@ -147,11 +147,13 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalConstants.h" />
     <ClInclude Include="IFileBaseProvider.h" />
+    <ClInclude Include="IGame.h" />
     <ClInclude Include="IReader.h" />
     <ClInclude Include="IUser.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="UserStruct.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

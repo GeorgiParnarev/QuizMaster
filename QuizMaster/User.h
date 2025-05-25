@@ -29,6 +29,8 @@ protected:
 	virtual IReader& Reader() override;
 	virtual IFileBaseProvider& Provider() override;
 
+	int FindUserIndex(UserStruct& us, Vector<String>& usersVec);
+
 public:
 	User(IWriter*, IReader*, IFileBaseProvider*);
 
@@ -51,8 +53,11 @@ public:
 
 	virtual void Help() override;
 	virtual unsigned int Hash(const String& str) override;
+	virtual int FindUserData(UserStruct&, bool) override;
 	virtual void SaveData() override;
+	virtual void AllUsers(String&) override;
 	virtual String BuildUserData() override;
+	virtual void SetUpUserData(UserStruct&, Vector<String>&, UserOptions) override;
 
 	virtual ~User() {}
 };

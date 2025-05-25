@@ -89,5 +89,11 @@
     <ClInclude Include="CommandStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UserStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

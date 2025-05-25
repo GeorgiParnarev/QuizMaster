@@ -1,9 +1,11 @@
 #pragma once
 
 #include "IUser.h"
+#include "Player.h"
 #include "CommandStruct.h"
+#include "IGame.h"
 
-class Game
+class Game : public IGame
 {
 private:
     IUser* user;
@@ -33,4 +35,7 @@ public:
     void LoginUser();
     void LogoutUser();
     void SignupUser();
+
+   /* virtual unsigned int GetMaxQuizId() const override;
+    virtual void SetMaxQuizId(unsigned int) override;*/
 };

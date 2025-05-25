@@ -4,6 +4,7 @@
 #include "IReader.h"
 #include "IFileBaseProvider.h"
 #include "CommandStruct.h"
+#include "UserStruct.h"
 
 class IUser 
 {
@@ -33,6 +34,10 @@ public:
 	virtual void Help() = 0;
 	virtual void SaveData() = 0;
 	virtual String BuildUserData() = 0;
+
+	virtual void AllUsers(String&) = 0;
+	virtual int FindUserData(UserStruct&, bool) = 0;
+	virtual void SetUpUserData(UserStruct&, Vector<String>&, UserOptions) = 0;
 
 	virtual unsigned int Hash(const String&) = 0;
 };
