@@ -103,18 +103,9 @@ String User::BuildUserData()
 {
 	String result = EMPTY_STRING;
 
-	char* arr = new char[2] {'\0'};
-	arr[0] = FILENAME_TO_DATA_SEPARATOR;
-
-	result += this->fileName + String(arr);
-
-	arr[0] = ROW_DATA_SEPARATOR;
-	String newLine = String(arr);
-
-	result += this->firstName + newLine;
-	result += this->lastName + newLine;
-
-	delete[] arr;
+	result += this->fileName + FILENAME_TO_DATA_SEPARATOR_STRING;
+	result += this->firstName + NEW_LINE;
+	result += this->lastName + NEW_LINE;
 
 	return result;
 }

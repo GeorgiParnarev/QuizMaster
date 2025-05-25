@@ -33,43 +33,34 @@ String Player::BuildUserData()
 {
     String result = User::BuildUserData();
 
-    char* arr = new char[2] {'\0'};
-
-    arr[0] = ROW_DATA_SEPARATOR;
-
-    String newLine(arr);
-
-    delete[] arr;
-    arr = nullptr;
-
-    result += String::UIntToString(this->level) + newLine;
-    result += String::UIntToString(this->points) + newLine;
-    result += String::UIntToString(this->numberCreatedQuizzes) + newLine;
-    result += String::UIntToString(this->numberLikedQuizzes) + newLine;
-    result += String::UIntToString(this->numberFavoriteQuizzes) + newLine;
-    result += String::UIntToString(this->numberFinishedChallenges) + newLine;
-    result += String::UIntToString(this->numberSolvedTestQuizzes) + newLine;
-    result += String::UIntToString(this->numberSolvedNormalQuizzes) + newLine;
-    result += String::UIntToString(this->numberCreatedQuizzesChallengers) + newLine;
+    result += String::UIntToString(this->level) + NEW_LINE;
+    result += String::UIntToString(this->points) + NEW_LINE;
+    result += String::UIntToString(this->numberCreatedQuizzes) + NEW_LINE;
+    result += String::UIntToString(this->numberLikedQuizzes) + NEW_LINE;
+    result += String::UIntToString(this->numberFavoriteQuizzes) + NEW_LINE;
+    result += String::UIntToString(this->numberFinishedChallenges) + NEW_LINE;
+    result += String::UIntToString(this->numberSolvedTestQuizzes) + NEW_LINE;
+    result += String::UIntToString(this->numberSolvedNormalQuizzes) + NEW_LINE;
+    result += String::UIntToString(this->numberCreatedQuizzesChallengers) + NEW_LINE;
 
     for (size_t i = 0; i < this->listCreatedQuizzes.getSize(); i++)
     {
-        result = result + this->listCreatedQuizzes[i] + newLine;
+        result = result + this->listCreatedQuizzes[i] + NEW_LINE;
     }
 
     for (size_t i = 0; i < this->listLikedQuizzes.getSize(); i++)
     {
-        result = result + String::UIntToString(this->listLikedQuizzes[i]) + newLine;
+        result = result + String::UIntToString(this->listLikedQuizzes[i]) + NEW_LINE;
     }
 
     for (size_t i = 0; i < this->listFavoriteQuizzes.getSize(); i++)
     {
-        result = result + String::UIntToString(this->listFavoriteQuizzes[i]) + newLine;
+        result = result + String::UIntToString(this->listFavoriteQuizzes[i]) + NEW_LINE;
     }
 
     for (size_t i = 0; i < this->listFinishedChallenges.getSize(); i++)
     {
-        result = result + this->listFinishedChallenges[i] + newLine;
+        result = result + this->listFinishedChallenges[i] + NEW_LINE;
     }
 
     return result;

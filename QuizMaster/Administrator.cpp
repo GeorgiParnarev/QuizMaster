@@ -17,6 +17,17 @@ void Administrator::Help()
 	this->Writer().WriteLine("ban <username>");
 }
 
+String Administrator::BuildUserData()
+{
+	String result = User::BuildUserData();
+	return result;
+}
+
+void Administrator::Action(const CommandStruct& cmdStr)
+{
+	User::Action(cmdStr);
+}
+
 void Administrator::SaveData()
 {
 

@@ -4,7 +4,7 @@
 void FileBaseProvider::FileSave(String& str)
 {
     Vector<String> v;
-    String::Split(FILENAME_TO_DATA_SEPARATOR, v, str);
+    String::Split(FILENAME_TO_DATA_SEPARATOR_CHAR, v, str);
     std::ofstream ofs;
 
     ofs.open(v[0].c_str(), std::fstream::out | std::fstream::trunc);
@@ -64,13 +64,8 @@ void FileBaseProvider::Action(String& str, ProviderOptions options)
     }
     else if (options == ProviderOptions::ConfigSave)
     {
-        char* arr = new char[2] {'\0'};
-        arr[0] = FILENAME_TO_DATA_SEPARATOR;
-        String s = CONFIG_FILE_NAME + String(arr) + str;
+        String s = CONFIG_FILE_NAME + FILENAME_TO_DATA_SEPARATOR_STRING + str;
         FileSave(s);
-
-        delete[] arr;
-        arr = nullptr;
     }
     else if (options == ProviderOptions::UserFind)
     {
@@ -79,13 +74,8 @@ void FileBaseProvider::Action(String& str, ProviderOptions options)
     }
     else if (options == ProviderOptions::NewUserSave)
     {
-        char* arr = new char[2] {'\0'};
-        arr[0] = FILENAME_TO_DATA_SEPARATOR;
-        String s = USERS_FILE_NAME + String(arr) + str;
+        String s = USERS_FILE_NAME + FILENAME_TO_DATA_SEPARATOR_STRING + str;
         FileSave(s);
-
-        delete[] arr;
-        arr = nullptr;
     }
     else if (options == ProviderOptions::UserLoad)
     {
