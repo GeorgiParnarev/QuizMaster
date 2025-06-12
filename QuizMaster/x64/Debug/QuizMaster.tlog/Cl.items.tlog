@@ -5,6 +5,9 @@ D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\FileBaseProvider.cpp;D:\uni
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Game.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Game.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\IWriter.h;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\IWriter.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Player.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Player.obj
+D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Question.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Question.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\QuizMaster.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\QuizMaster.obj
+D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\SingleChoiceQuestion.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\String.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\String.obj
+D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\TrueOrFalseQuestion.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\TrueOrFalseQuestion.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\User.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\User.obj

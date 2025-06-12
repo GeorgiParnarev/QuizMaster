@@ -134,8 +134,11 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="IWriter.h" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Question.cpp" />
     <ClCompile Include="QuizMaster.cpp" />
+    <ClCompile Include="SingleChoiceQuestion.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="TrueOrFalseQuestion.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,10 +151,14 @@
     <ClInclude Include="GlobalConstants.h" />
     <ClInclude Include="IFileBaseProvider.h" />
     <ClInclude Include="IGame.h" />
+    <ClInclude Include="IQuestion.h" />
     <ClInclude Include="IReader.h" />
     <ClInclude Include="IUser.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Question.h" />
+    <ClInclude Include="SingleChoiceQuestion.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="TrueOrFalseQuestion.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UserStruct.h" />
     <ClInclude Include="Vector.h" />

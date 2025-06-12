@@ -14,6 +14,15 @@ enum ProviderOptions
 	ConfigLoad,
 };
 
+enum QuestionType
+{
+	TF,
+	SC,
+	MC,
+	ShA,
+	MP,
+};
+
 enum UserOptions
 {
 	Empty = 0b00000000,

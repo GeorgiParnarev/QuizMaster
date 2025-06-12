@@ -62,7 +62,7 @@ void Game::GameLoop()
         }
         else if (this->command->command == SIGNUP)
         {
-            //this->SignupUser();
+            this->SignupUser();
         }
         else
         {
