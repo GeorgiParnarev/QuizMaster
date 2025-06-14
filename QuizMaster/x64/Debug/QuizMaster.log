@@ -1,88 +1,15 @@
-﻿  FileBaseProvider.cpp
-  Game.cpp
+﻿  Quiz.cpp
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'FileBaseProvider.cpp')
+  (compiling source file 'Quiz.cpp')
   D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
   the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\FileBaseProvider.cpp(6,20):
+  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Quiz.cpp(102,24):
   	see reference to class template instantiation 'Vector<String>' being compiled
   	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
   	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\FileBaseProvider.cpp(6,20):
-  		see the first reference to 'Vector<String>::Vector' in 'FileBaseProvider::FileSave'
+  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Quiz.cpp(102,24):
+  		see the first reference to 'Vector<String>::Vector' in 'Quiz::SaveQuiz'
   	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
   	while compiling class template member function 'Vector<String>::Vector(size_t)'
   
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Player.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file 'Game.cpp')
-  
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Game.cpp')
-  D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
-  the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Player.h(20,20):
-  	see reference to class template instantiation 'Vector<String>' being compiled
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
-  	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Game.cpp(78,20):
-  		see the first reference to 'Vector<String>::Vector' in 'Game::SetCommandStruct'
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
-  	while compiling class template member function 'Vector<String>::Vector(size_t)'
-  
-  MatchingPairsQuestion.cpp
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MatchingPairsQuestion.cpp(25,57): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MatchingPairsQuestion.cpp(45,22): warning C4267: '=': conversion from 'size_t' to 'char', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MatchingPairsQuestion.cpp(55,22): warning C4267: '=': conversion from 'size_t' to 'char', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'MatchingPairsQuestion.cpp')
-  D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
-  the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.h(7,20):
-  	see reference to class template instantiation 'Vector<String>' being compiled
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
-  	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MatchingPairsQuestion.cpp(5,1):
-  		see the first reference to 'Vector<String>::Vector' in 'MatchingPairsQuestion::MatchingPairsQuestion'
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
-  	while compiling class template member function 'Vector<String>::Vector(size_t)'
-  
-  MultipleChoiceQuestion.cpp
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MultipleChoiceQuestion.cpp(57,49): warning C4244: '=': conversion from 'double' to 'unsigned char', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'MultipleChoiceQuestion.cpp')
-  D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
-  the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.h(7,20):
-  	see reference to class template instantiation 'Vector<String>' being compiled
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
-  	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MultipleChoiceQuestion.cpp(14,20):
-  		see the first reference to 'Vector<String>::Vector' in 'MultipleChoiceQuestion::SeparateAnswers'
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
-  	while compiling class template member function 'Vector<String>::Vector(size_t)'
-  
-  Question.cpp
-  QuizMaster.cpp
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Player.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file 'QuizMaster.cpp')
-  
-  ShortAnswerQuestion.cpp
-  SingleChoiceQuestion.cpp
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.cpp(56,59): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.cpp(105,22): warning C4267: '=': conversion from 'size_t' to 'char', possible loss of data
-D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'SingleChoiceQuestion.cpp')
-  D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
-  the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.h(7,20):
-  	see reference to class template instantiation 'Vector<String>' being compiled
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
-  	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\SingleChoiceQuestion.cpp(11,1):
-  		see the first reference to 'Vector<String>::Vector' in 'SingleChoiceQuestion::SingleChoiceQuestion'
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
-  	while compiling class template member function 'Vector<String>::Vector(size_t)'
-  
-  TrueOrFalseQuestion.cpp
-  Generating Code...
   QuizMaster.vcxproj -> D:\uni\projects uni\QuizMaster\QuizMaster\x64\Debug\QuizMaster.exe
