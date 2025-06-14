@@ -53,5 +53,6 @@ const char FILENAME_TO_DATA_SEPARATOR_CHAR = '$';
 const String FILENAME_TO_DATA_SEPARATOR_STRING = "$";
 const char ROW_DATA_SEPARATOR = '\n';
 const char ELEMENT_DATA_SEPARATOR = ' ';
+const char COMMA_DATA_SEPARATOR = ',';
 
 const String NEW_LINE = "\n";

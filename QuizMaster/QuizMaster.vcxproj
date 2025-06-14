@@ -133,9 +133,12 @@
     <ClCompile Include="FileBaseProvider.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="IWriter.h" />
+    <ClCompile Include="MatchingPairsQuestion.cpp" />
+    <ClCompile Include="MultipleChoiceQuestion.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="QuizMaster.cpp" />
+    <ClCompile Include="ShortAnswerQuestion.cpp" />
     <ClCompile Include="SingleChoiceQuestion.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="TrueOrFalseQuestion.cpp" />
@@ -154,8 +157,11 @@
     <ClInclude Include="IQuestion.h" />
     <ClInclude Include="IReader.h" />
     <ClInclude Include="IUser.h" />
+    <ClInclude Include="MatchingPairsQuestion.h" />
+    <ClInclude Include="MultipleChoiceQuestion.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Question.h" />
+    <ClInclude Include="ShortAnswerQuestion.h" />
     <ClInclude Include="SingleChoiceQuestion.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="TrueOrFalseQuestion.h" />
