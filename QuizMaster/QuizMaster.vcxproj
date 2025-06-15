@@ -130,10 +130,12 @@
     <ClCompile Include="Administrator.cpp" />
     <ClCompile Include="ConsoleReader.cpp" />
     <ClCompile Include="ConsoleWriter.cpp" />
+    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="FileBaseProvider.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="IWriter.h" />
     <ClCompile Include="MatchingPairsQuestion.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="MultipleChoiceQuestion.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Question.cpp" />
@@ -151,6 +153,7 @@
     <ClInclude Include="CommandStruct.h" />
     <ClInclude Include="ConsoleReader.h" />
     <ClInclude Include="ConsoleWriter.h" />
+    <ClInclude Include="DateTime.h" />
     <ClInclude Include="FileBaseProvider.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalConstants.h" />
@@ -160,6 +163,7 @@
     <ClInclude Include="IReader.h" />
     <ClInclude Include="IUser.h" />
     <ClInclude Include="MatchingPairsQuestion.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="MultipleChoiceQuestion.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Question.h" />

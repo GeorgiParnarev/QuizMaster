@@ -20,22 +20,24 @@ private:
     void Free();
     void GameLoop();
     void SetCommandStruct();
-
     void LoadConfig();
-    void SaveConfig();
 
 public:
     Game(IWriter*, IReader*, IFileBaseProvider*);
     ~Game();
 
-    void Init();
-    void Run();
-    void Exit();
+    virtual void Init() override;
+    virtual void Run() override;
+    virtual void Exit() override;
 
     void LoginUser();
     void LogoutUser();
     void SignupUser();
 
-   /* virtual unsigned int GetMaxQuizId() const override;
-    virtual void SetMaxQuizId(unsigned int) override;*/
+    void SaveUser();
+    void LoadUser(UserStruct& us);
+
+    virtual unsigned int getMaxQuizId() const override;
+    virtual void setMaxQuizId(unsigned int) override;
+    virtual void SaveConfig() override;
 };

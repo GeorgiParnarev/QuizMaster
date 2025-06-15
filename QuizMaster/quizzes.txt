@@ -1,0 +1,9 @@
+1|Quiz1|UserPrime|1Quiz.txt|2|1|0
+2|Quiz2|UserPrime|2Quiz.txt|2|1|0
+3|Quiz3|UserPrime|3Quiz.txt|2|1|1
+4|Quiz4|UserPrime|4Quiz.txt|2|1|0
+5|Quiz5|UserPrime|5Quiz.txt|2|1|0
+6|Quiz1 UserSecond|UserSecond|6Quiz.txt|2|1|0
+7|Quizzz Full|UserPrime|7Quiz.txt|4|5|0
+8|MPQUIZ|UserPrime|8Quiz.txt|4|3|0
+9|TESTQUIZ|UserPrime|9Quiz.txt|2|5|0

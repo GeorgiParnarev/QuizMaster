@@ -1,10 +1,12 @@
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Administrator.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Administrator.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\ConsoleReader.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\ConsoleReader.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\ConsoleWriter.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\ConsoleWriter.obj
+D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\DateTime.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\DateTime.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\FileBaseProvider.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\FileBaseProvider.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Game.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Game.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\IWriter.h;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\IWriter.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MatchingPairsQuestion.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\MatchingPairsQuestion.obj
+D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Message.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Message.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\MultipleChoiceQuestion.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\MultipleChoiceQuestion.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Player.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Player.obj
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Question.cpp;D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\x64\Debug\Question.obj

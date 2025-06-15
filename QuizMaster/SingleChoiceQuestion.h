@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Question.h"
 #include "IQuestion.h"
 
@@ -5,6 +7,7 @@ class SingleChoiceQuestion : public Question, public IQuestion
 {
 private:
     Vector<String> questions;
+
 public:
     Vector<String>& getQuestions();
 

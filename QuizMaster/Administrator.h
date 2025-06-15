@@ -5,11 +5,11 @@
 class Administrator : public User
 {
 public:
-	Administrator(IWriter*, IReader*, IFileBaseProvider*);
-	virtual ~Administrator() {};
+    Administrator(IWriter*, IReader*, IFileBaseProvider*);
+    virtual ~Administrator() {};
 
-	virtual void Help() override;
-	virtual void Action(const CommandStruct&) override;
-	virtual String BuildUserData() override;
-	virtual void SaveData() override;
+    virtual void Help() override;
+    virtual void Action(CommandStruct&) override;
+    virtual String BuildUserData() override;
+    virtual void SaveData() override;
 };

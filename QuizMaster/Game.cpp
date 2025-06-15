@@ -1,5 +1,10 @@
+#include <iostream>
+
 #include "Game.h"
 #include "User.h"
+#include "Administrator.h"
+#include "Player.h"
+#include "GlobalConstants.h"
 
 Game::Game(IWriter* writer, IReader* reader, IFileBaseProvider* provider)
     : writer(writer)
@@ -23,17 +28,16 @@ Game::~Game()
     this->Free();
 }
 
-void Game::Run()
-{
-    this->GameLoop();
-}
-
 void Game::Init()
 {
     this->command = new CommandStruct();
     this->user = new User(this->writer, this->reader, this->provider);
-
     this->LoadConfig();
+}
+
+void Game::Run()
+{
+    this->GameLoop();
 }
 
 void Game::GameLoop()
@@ -44,23 +48,23 @@ void Game::GameLoop()
     {
         this->SetCommandStruct();
 
-        if (this->command->command == EXIT)
+        if (this->command->command == EXIT && this->command->paramRange == 1)
         {
             isLoopExit = true;
             this->Exit();
         }
-        else if (this->command->command == LOGIN)
+        else if (this->command->command == LOGIN && this->command->paramRange == 3)
         {
             this->LoginUser();
         }
-        else if (this->command->command == LOGOUT)
+        else if (this->command->command == LOGOUT && this->command->paramRange == 1)
         {
             if (this->user->getIsHasLogin())
             {
                 this->LogoutUser();
             }
         }
-        else if (this->command->command == SIGNUP)
+        else if (this->command->command == SIGNUP && this->command->paramRange == 6)
         {
             this->SignupUser();
         }
@@ -83,6 +87,9 @@ void Game::SetCommandStruct()
     String* s = this->reader->ReadLine();
     String::Split(ELEMENT_DATA_SEPARATOR, commandLine, *s);
 
+    this->command->CommandLine = *s;
+    this->command->paramRange = commandLine.getSize();
+
     delete s;
     s = nullptr;
 
@@ -103,21 +110,6 @@ void Game::SetCommandStruct()
     }
 }
 
-void Game::LoginUser()
-{
-    if (this->user->getIsHasLogin())
-    {
-        this->writer->WriteLine("You cannot log in a new user before logging out!");
-
-        return;
-    }
-
-    UserStruct* us = new UserStruct();
-
-    us->username = this->command->Param1;
-    us->password = this->command->Param2;
-}
-
 void Game::Exit()
 {
     if (this->user->getIsHasLogin())
@@ -130,10 +122,65 @@ void Game::Exit()
     this->Free();
 }
 
+void Game::LoadConfig()
+{
+    Vector<String> v;
+    String configString;
+    this->provider->Action(configString, ProviderOptions::ConfigLoad);
+    String::Split('\n', v, configString);
+
+    this->maxUserId = v[0].StringToInt();
+    this->maxQuizId = v[1].StringToInt();
+}
+
+void Game::SaveConfig()
+{
+    String configString = String::UIntToString(this->maxUserId) + "\n" + String::UIntToString(this->maxQuizId);
+
+    this->provider->Action(configString, ProviderOptions::ConfigSave);
+}
+
+void Game::LoginUser()
+{
+    if (this->user->getIsHasLogin())
+    {
+        this->writer->WriteLine("You cannot log in a new user before logging out!");
+        return;
+    }
+
+    UserStruct* us = new UserStruct();
+
+    us->username = this->command->Param1;
+    us->password = this->command->Param2;
+
+    int uo = this->user->FindUserData(*us, EXSIST);
+
+    if (uo == UserOptions::NotFound)
+    {
+        this->writer->WriteLine("User not found!");
+    }
+    else if (uo == UserOptions::WrongPassword)
+    {
+        this->writer->WriteLine("Wrong password!");
+    }
+    else if (uo == UserOptions::Ban)
+    {
+        this->writer->WriteLine("Sorry, the user has been banned!");
+    }
+    else if ((uo & UserOptions::OK) == UserOptions::OK)
+    {
+        this->LoadUser(*us);
+        String s = "Welcome " + this->user->getName() + "!";
+        this->writer->WriteLine(s);
+    }
+
+    delete us;
+    us = nullptr;
+}
+
 void Game::LogoutUser()
 {
     this->user->SaveData();
-
     delete this->user;
     this->user = nullptr;
 
@@ -148,7 +195,6 @@ void Game::SignupUser()
     if (this->user->getIsHasLogin())
     {
         this->writer->WriteLine("You cannot log in a new user before logging out!");
-
         return;
     }
 
@@ -201,6 +247,8 @@ void Game::SignupUser()
 
     this->writer->WriteLine("Signup " + us->username + " successful!");
 
+    this->SaveConfig();
+
     delete us;
     us = nullptr;
 
@@ -208,20 +256,36 @@ void Game::SignupUser()
     newPlayer = nullptr;
 }
 
-void Game::LoadConfig()
+void Game::SaveUser()
 {
-    Vector<String> v;
-    String configString;
-    this->provider->Action(configString, ProviderOptions::ConfigLoad);
-    String::Split('\n', v, configString);
-
-    this->maxUserId = v[0].StringToInt();
-    this->maxQuizId = v[1].StringToInt();
+    //TODO
 }
 
-void Game::SaveConfig()
+void Game::LoadUser(UserStruct& us)
 {
-    String configString = String::UIntToString(this->maxUserId) + "\n" + String::UIntToString(this->maxQuizId);
+    if (us.id <= 10)
+    {
+        delete this->user;
+        this->user = nullptr;
 
-    this->provider->Action(configString, ProviderOptions::ConfigSave);
+        this->user = new Administrator(this->writer, this->reader, this->provider);
+    }
+    else
+    {
+        this->user = new Player(this->writer, this->reader, this->provider, this);
+    }
+
+    Vector<String> v;
+
+    this->user->SetUpUserData(us, v, UserOptions::Empty);
+}
+
+unsigned int Game::getMaxQuizId() const
+{
+    return this->maxQuizId;
+}
+
+void Game::setMaxQuizId(unsigned int quizId)
+{
+    this->maxQuizId = quizId;
 }

@@ -1,15 +1,17 @@
-﻿  Quiz.cpp
+﻿  TrueOrFalseQuestion.cpp
+  User.cpp
 D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  (compiling source file 'Quiz.cpp')
+  (compiling source file 'User.cpp')
   D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(81,36):
   the template instantiation context (the oldest one first) is
-  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Quiz.cpp(102,24):
+  	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\User.cpp(120,20):
   	see reference to class template instantiation 'Vector<String>' being compiled
   	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(76,28):
   	while compiling class template member function 'Vector<String>::Vector(void)'
-  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Quiz.cpp(102,24):
-  		see the first reference to 'Vector<String>::Vector' in 'Quiz::SaveQuiz'
+  		D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\User.cpp(120,20):
+  		see the first reference to 'Vector<String>::Vector' in 'User::GenerateReason'
   	D:\uni\projects uni\QuizMaster\QuizMaster\QuizMaster\Vector.h(79,42):
   	while compiling class template member function 'Vector<String>::Vector(size_t)'
   
+  Generating Code...
   QuizMaster.vcxproj -> D:\uni\projects uni\QuizMaster\QuizMaster\x64\Debug\QuizMaster.exe
