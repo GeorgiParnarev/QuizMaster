@@ -1,3 +1,6 @@
+// https://github.com/GeorgiParnarev/QuizMaster
+// Георги Парнарев 0IM0600547
+
 #include <iostream>
 
 #include "ConsoleWriter.h"
@@ -11,9 +14,17 @@ int main()
     ConsoleReader* reader = new ConsoleReader();
     FileBaseProvider* provider = new FileBaseProvider();
 
-    Game* game = new Game(writer, reader, provider);
-    game->Init();
-    game->Run();
+    IGame* game = new Game(writer, reader, provider);
+    try
+    {
+
+        game->Init();
+        game->Run();
+    }
+    catch (String s)
+    {
+        writer->WriteLine(s);
+    }
 
     delete game;
     game = nullptr;
