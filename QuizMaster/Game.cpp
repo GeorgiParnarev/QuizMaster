@@ -72,8 +72,6 @@ void Game::GameLoop()
         {
             this->user->Action(*this->command);
         }
-
-        //TODO
     }
 }
 

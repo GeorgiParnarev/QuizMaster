@@ -7,7 +7,7 @@ void QuizIndexDTO::SetElement(String s)
 
     this->id = quizVec[0].StringToInt();
     this->quizName = quizVec[1];
-    this->userName = quizVec[2];
+    this->username = quizVec[2];
     this->quizFileName = quizVec[3];
     this->quizStatus = quizVec[4].StringToInt();
     this->numOfQuestions = quizVec[5].StringToInt();
@@ -16,7 +16,7 @@ void QuizIndexDTO::SetElement(String s)
 
 String QuizIndexDTO::ToIndexString()
 {
-    String s = String::UIntToString(this->id) + "|" + this->quizName + "|" + this->userName + "|" + this->quizFileName;
+    String s = String::UIntToString(this->id) + "|" + this->quizName + "|" + this->username + "|" + this->quizFileName;
     s += "|" + String::UIntToString(this->quizStatus) + "|" + String::UIntToString(this->numOfQuestions) + "|";
     s += String::UIntToString(this->likes);
 

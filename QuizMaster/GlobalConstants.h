@@ -38,7 +38,7 @@ enum QuizStatus
 	RejectedQuiz,
 	RemovedQuiz,
 	LikeQuiz,
-	UnlikeQuiz,
+	DislikeQuiz,
 };
 
 enum UserOptions
@@ -87,6 +87,13 @@ const bool NOT_LOGIN = false;
 const bool TEST_MODE = true;
 const bool NORMAL_MODE = false;
 
+const String BAN = "ban";
+const String PENDING = "pending";
+const String APPROVE_QUIZ = "approve-quiz";
+const String REJECT_QUIZ = "reject-quiz";
+const String REMOVE_QUIZ = "remove-quiz";
+const String VIEW_REPORTS = "view-reports";
+
 const String VIEW_PROFILE = "view-profile";
 const String VIEW = "view";
 const String CREATE_QUIZ = "create-quiz";
@@ -96,9 +103,9 @@ const String MESSAGES = "messages";
 const String ADD_TO_FAVS = "add-to-favs";
 const String REMOVE_FROM_FAVS = "remove-from-favs";
 const String LIKE_QUIZ = "like-quiz";
-const String UNLIKE_QUIZ = "unlike-quiz";
-const String VIEW_FINISHED_CHALLEENGES = "view-finished-challeenges";
-const String VIEW_CHALLEENGES = "view-challeenges";
+const String DISLIKE_QUIZ = "dislike-quiz";
+const String VIEW_FINISHED_CHALLENGES = "view-finished-challenges";
+const String VIEW_CHALLENGES = "view-challenges";
 const String EDIT_QUIZ = "edit-quiz";
 const String START_QUIZ = "start-quiz";
 const String SAVE_QUIZ = "save-quiz";

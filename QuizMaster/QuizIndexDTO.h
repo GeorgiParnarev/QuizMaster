@@ -9,7 +9,7 @@ struct QuizIndexDTO
 public:
 	unsigned int id;
 	String quizName;
-	String userName;
+	String username;
 	String quizFileName;
 	unsigned int quizStatus;
 	unsigned int numOfQuestions;

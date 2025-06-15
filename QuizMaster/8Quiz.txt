@@ -1,0 +1,35 @@
+MPQUIZ
+3
+UserPrime
+4
+Description 1
+AA,bb CC,aa
+200
+6
+AA
+BB
+CC
+DD
+EE
+FF
+3
+aa
+bb
+cc
+0
+Description 2
+True
+10
+4
+Description 3
+BBB,aaa EEE,bbb
+150
+5
+AAA
+BBB
+CCC
+DDD
+EEE
+2
+aaa
+bbb

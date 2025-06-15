@@ -7,3 +7,6 @@
 7|Quizzz Full|UserPrime|7Quiz.txt|4|5|0
 8|MPQUIZ|UserPrime|8Quiz.txt|4|3|0
 9|TESTQUIZ|UserPrime|9Quiz.txt|2|5|0
+10|test|UserPrime|10Quiz.txt|2|1|0
+11|tes2|UserPrime|11Quiz.txt|3|1|0
+12|test3|UserPrime|12Quiz.txt|4|1|0

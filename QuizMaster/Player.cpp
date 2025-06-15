@@ -36,16 +36,16 @@ void Player::Help()
 
     this->Writer().WriteLine("view-profile");
     this->Writer().WriteLine("edit-profile");
-    this->Writer().WriteLine("view-challeenges");
-    this->Writer().WriteLine("view-finished-challeenges");
+    this->Writer().WriteLine("view-challenges");
+    this->Writer().WriteLine("view-finished-challenges");
     this->Writer().WriteLine("view <nickname>");
     this->Writer().WriteLine("messages");
     this->Writer().WriteLine("create-quiz");
     this->Writer().WriteLine("edit-quiz <quiz id>");
     this->Writer().WriteLine("quizzes");
-    this->Writer().WriteLine("quizzes <usernane>");
+    this->Writer().WriteLine("quizzes <username>");
     this->Writer().WriteLine("like-quiz <quiz id>");
-    this->Writer().WriteLine("unlike-quiz <quiz id>");
+    this->Writer().WriteLine("dislike-quiz <quiz id>");
     this->Writer().WriteLine("add-to-favs <quiz id>");
     this->Writer().WriteLine("remove-from-favs <quiz id>");
     this->Writer().WriteLine("start-quiz <quiz id> test | normal (shuffle)");
@@ -101,15 +101,15 @@ void Player::Action(CommandStruct& cmdStr)
     {
         this->LikeQuiz(cmdStr.Param1);
     }
-    else if (cmdStr.command == UNLIKE_QUIZ && cmdStr.paramRange == 2)
+    else if (cmdStr.command == DISLIKE_QUIZ && cmdStr.paramRange == 2)
     {
         this->DislikeQuiz(cmdStr.Param1);
     }
-    else if (cmdStr.command == VIEW_FINISHED_CHALLEENGES && cmdStr.paramRange == 1)
+    else if (cmdStr.command == VIEW_FINISHED_CHALLENGES && cmdStr.paramRange == 1)
     {
         this->PrintFinishedChallenges();
     }
-    else if (cmdStr.command == VIEW_CHALLEENGES && cmdStr.paramRange == 1)
+    else if (cmdStr.command == VIEW_CHALLENGES && cmdStr.paramRange == 1)
     {
         this->PrintChallenges();
     }
@@ -599,7 +599,7 @@ void Player::DislikeQuiz(String& quizId)
 
             if (qiDTO.id == id)
             {
-                this->GetQuiz().SaveQuiz(QuizStatus::UnlikeQuiz, qiDTO.id);
+                this->GetQuiz().SaveQuiz(QuizStatus::DislikeQuiz, qiDTO.id);
                 return;
             }
         }
@@ -800,7 +800,7 @@ void Player::ReportQuiz(String& quizIdString, String& reason)
     this->Provider().Action(allMessagesString, ProviderOptions::MessagesSave);
 }
 
-void Player::Quizzes(String& userName)
+void Player::Quizzes(String& username)
 {
     String s = this->GetQuiz().FindAllQuizzes();
 
@@ -819,7 +819,7 @@ void Player::Quizzes(String& userName)
 
         if (qiDTO.quizStatus == QuizStatus::ApprovedQuiz)
         {
-            if (userName == EMPTY_STRING || userName == qiDTO.userName)
+            if (username == EMPTY_STRING || username == qiDTO.username)
             {
                 flag = true;
             }
@@ -831,7 +831,7 @@ void Player::Quizzes(String& userName)
 
         if (flag)
         {
-            String output = String::UIntToString(qiDTO.id) + " | " + qiDTO.quizName + " | " + qiDTO.userName + " | " + String::UIntToString(qiDTO.numOfQuestions) + " Questions | " + String::UIntToString(qiDTO.likes) + " likes";
+            String output = String::UIntToString(qiDTO.id) + " | " + qiDTO.quizName + " | " + qiDTO.username + " | " + String::UIntToString(qiDTO.numOfQuestions) + " Questions | " + String::UIntToString(qiDTO.likes) + " likes";
             this->Writer().WriteLine(output);
 
             //id|quizName|useName|quizFileName|QuizStatus|numOfQuestions|Likes
@@ -1527,7 +1527,7 @@ void Player::SetUpUserData(UserStruct& us, Vector<String>& v, UserOptions uo)
 
         bool isAddedNewQuiz = !this->ContainCreatedQuizzes(qiDTO.id)
             && (qiDTO.quizStatus == QuizStatus::ApprovedQuiz)
-            && (qiDTO.userName == this->getUsername());
+            && (qiDTO.username == this->getUsername());
 
         if (isAddedNewQuiz)
         {

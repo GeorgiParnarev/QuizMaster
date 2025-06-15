@@ -201,7 +201,7 @@ void Quiz::SaveQuiz(QuizStatus qs, unsigned int quizId)
 
         this->provider->Action(allQuizzesString, ProviderOptions::QuizIndexSave);
     }
-    else if (qs == QuizStatus::UnlikeQuiz)
+    else if (qs == QuizStatus::DislikeQuiz)
     {
         Vector<String> quizzesVec, resultVec;
 

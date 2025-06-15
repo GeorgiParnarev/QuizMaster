@@ -1,5 +1,4 @@
 #include "FileBaseProvider.h"
-#include "Vector.h"
 
 void FileBaseProvider::FileSave(String& str)
 {
@@ -24,13 +23,14 @@ String FileBaseProvider::FileLoad(String& str)
     std::ifstream ifs;
     char* arr = new char[1024] {'\0'};
 
+
     ifs.open(str.c_str());
 
     String s = "";
 
     if (!ifs.is_open())
     {
-        std::cerr << "Error opening the file!";
+        std::cerr << "Error opening the file!" << std::endl;
         s = "error";
         return s;
     }
@@ -64,25 +64,35 @@ void FileBaseProvider::Action(String& str, ProviderOptions options)
     }
     else if (options == ProviderOptions::ConfigSave)
     {
-        String s = CONFIG_FILE_NAME + FILENAME_TO_DATA_SEPARATOR_STRING + str;
+        char* arr = new char[2] {'\0'};
+        arr[0] = FILENAME_TO_DATA_SEPARATOR_CHAR;
+        String s = CONFIG_FILE_NAME + String(arr) + str;
         FileSave(s);
+
+        delete[] arr;
+        arr = nullptr;
     }
     else if (options == ProviderOptions::UserFind)
     {
         String s = USERS_FILE_NAME;
         str = FileLoad(s);
     }
-    else if (options == ProviderOptions::NewUserSave)
+    else if (options == ProviderOptions::NewUserSave || options == ProviderOptions::EditUser)
     {
-        String s = USERS_FILE_NAME + FILENAME_TO_DATA_SEPARATOR_STRING + str;
+        char* arr = new char[2] {'\0'};
+        arr[0] = FILENAME_TO_DATA_SEPARATOR_CHAR;
+        String s = USERS_FILE_NAME + String(arr) + str;
         FileSave(s);
+
+        delete[] arr;
+        arr = nullptr;
     }
-    else if (options == ProviderOptions::UserLoad)
+    else if ((options == ProviderOptions::UserLoad) || (options == ProviderOptions::QuizFind) || (options == ProviderOptions::MessagesLoad) || (options == ProviderOptions::QuizLoad))
     {
         String s = str;
         str = FileLoad(s);
     }
-    else if (options == ProviderOptions::UserSave)
+    else if ((options == ProviderOptions::UserSave) || (options == ProviderOptions::QuizSave) || (ProviderOptions::QuizIndexSave) || (ProviderOptions::MessagesSave))
     {
         String s = str;
         FileSave(s);
